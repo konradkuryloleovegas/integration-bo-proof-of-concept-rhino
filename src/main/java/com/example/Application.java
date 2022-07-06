@@ -27,6 +27,6 @@ public class Application {
     }
 
     public <T> T createClient(ClientFactory clientFactory, Class<T> client) {
-        return clientFactory.create(ClientSpecification.newBuilder(client, "bo-integration", "platform.integration").pathPrefix("bo-integration/api/").build());
+        return clientFactory.create(ClientSpecification.newBuilder(client, "country", "platform.integration").pathPrefix("country/api/country").build());
     }
 }
