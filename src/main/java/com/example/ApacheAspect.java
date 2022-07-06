@@ -16,13 +16,11 @@ public class ApacheAspect {
 
     @Around("callAt()")
     public Object around(ProceedingJoinPoint pjp) throws Throwable {
-
-
         Object[] args = pjp.getArgs();
         for (Object arg : args) {
             if (arg instanceof HttpRequestWrapper){
                 HttpRequestWrapper arg1 = (HttpRequestWrapper) arg;
-                arg1.setHeader("session", "hardcoded-value");
+                arg1.setHeader("session", new SpringAopTracker().getSessionStorage());
             }
         }
         log.info("session added to http headers");

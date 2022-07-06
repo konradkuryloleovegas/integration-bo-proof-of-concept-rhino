@@ -11,10 +11,12 @@ import com.gearsofleo.rhino.rest.jersey.client.config.RestJerseyClientConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 
 @SpringBootApplication(scanBasePackages = {"com.example"}, exclude = {BoIntegrationFeignClientAutoConfig.class, CountryClientConfig.class})
 @Import({RestJerseyClientConfig.class, CoreValidationConfig.class, DiscoveryConsulClientConfig.class})
+@EnableAspectJAutoProxy(proxyTargetClass = true)
 public class Application {
 
     public static void main(String[] args) {
