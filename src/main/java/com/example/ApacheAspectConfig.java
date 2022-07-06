@@ -5,11 +5,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class AspectConfig {
+public class ApacheAspectConfig {
 
     @Bean
-    public SessionAspect theAspect() {
-        SessionAspect aspect = Aspects.aspectOf(SessionAspect.class);
+    public ApacheAspect customApacheAspect() {
+        ApacheAspect aspect = Aspects.aspectOf(ApacheAspect.class);
         return aspect;
     }
 
