@@ -1,0 +1,4 @@
+# /!\ This file is managed by leo-ci. Edit with care! /!\
+version: 3.27.0
+template: Jenkins:Maven
+disableBot: false

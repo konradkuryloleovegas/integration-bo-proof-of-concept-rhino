@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: platform-integration-bo-proof-of-concept-rhino
+  description: proof of concept - integration-bo-api feign client usage in rhino service
+  annotations:
+    github.com/project-slug: gutro/Platform-Integration-Bo-Proof-Of-Concept-Rhino
+    jenkins.io/github-folder: Builds/platform-integration-bo-proof-of-concept-rhino
+    leovegas.com/component-id: platform-integration-bo-proof-of-concept-rhino
+    leovegas.com/maven-coordinate: com.gearsofleo.platform/platform-integration-bo-proof-of-concept-rhino
+  tags:
+    - kotlin
+    - hyraco
+spec:
+  dependsOn:
+    - changemanagement:chm-platform-integration-bo-proof-of-concept-rhino
+  type: service
+  lifecycle: experimental
+  owner: group:core-automation-and-tooling
+---
+apiVersion: com.gearsofleo.platform/v1alpha1
+kind: ChangeManagement
+metadata:
+  name: chm-platform-integration-bo-proof-of-concept-rhino
+  confidentiality: 1
+  integrity: 1
+  accountability: 1
+  availability: 1
+  scoped-to-license:
+    exclude: [ ]
